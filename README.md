@@ -1,2 +1,2 @@
 # This is my README
-### class: cpsc332 - Web Development
+### class: CPSC332 - Web Development
