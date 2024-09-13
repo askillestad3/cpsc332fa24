@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Abby Skillestad, Web Development, Fall 2024</title>
+        <style>
+
+            /* set background color */
+            body {
+                background-color: #a3a3a3;
+            }
+
+            /* make link dark red color */
+            a {
+                color: #9d0000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>This is super interesting content to reflect that this is my HW1 submission</h1>
+        <p>What I hope to gain from this class is a <strong>deeper understanding</strong> of web development since
+        that has become the area of computer science that has always <em>interested</em> me the most.</p>
+
+        <img src="WebDev_meme.jpeg" alt="Web Development meme photo">
+        <p>Click here to view even more super relatable <a href="https://www.flux-academy.com/blog/25-web-design-memes-only-designers-will-understand"><u>web development memes</u></a></p>
+    
+        <button onclick="changeHeadingColor()">Click here to change heading color!</button>
+        <script>
+            function changeHeadingColor() {
+                const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+                document.querySelector('h1').style.color = randomColor;
+            }
+        </script>
+    </body>
+</html>
+/Users/abbyskillestad/Desktop/dev/CPSC323/homework-1-askillestad3/WebDev_meme.jpeg
