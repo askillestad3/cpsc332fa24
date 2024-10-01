@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header / Navigation */
+.nav-header {
+    /* EXTRA CREDIT special effect */
+    background: radial-gradient(#4A4947, #697565);
+    padding: 10px;
+    text-align: center;
+    /* EXTRA CREDIT custom font */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-header li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-header a {
+    color: #FAF7F0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    padding: 20px;
+}
+
+.left-section {
+    flex: 1;
+    padding-right: 20px;
+    background-color: #FAF7F0;
+}
+
+.right-section {
+    flex: 2;
+}
+
+/* Core Skills Section */
+#core-skills {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #697565;
+}
+
+#core-skills h2 {
+     /* EXTRA CREDIT custom font */
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.skills-list {
+    list-style-type: square;
+    padding-left: 20px;
+    /* EXTRA CREDIT custom font */
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: black;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+
+/* Profile Image */
+.profile-pic {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #4A4947;
+    padding: 8px;
+    /* EXTRA CREDIT custom font */
+    font-family: 'Merriweather', serif;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #FAF7F0;
+}
+
+.styled-table tr:hover {
+    background-color: #D8D2C2;
+}
+
+.styled-table th {
+    background-color: #697565;
+    color: white;
+    text-align: left;
+    /* EXTRA CREDIT custom font */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+}
