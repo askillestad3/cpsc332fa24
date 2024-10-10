@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Art Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Art Gallery</h1>
+        </header>
+
+        <main>
+            <!-- Artwork View Counter -->
+            <div id="counter">Artworks Viewed: 0</div>
+
+            <!-- Buttons for Reset, Adding New Art, and Remove Artwork -->
+            <button id="reset-button">Reset Gallery</button>
+            <button id="add-art-button">Add New Artwork</button>
+            <button id="remove-mode-button">Remove Artwork</button>
+
+            <!-- Art Gallery Section -->
+            <section class="art-grid">
+                <div class="art-panel">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Starry_Night.jpg/800px-The_Starry_Night.jpg" alt="Starry Night">
+                    <p>Starry Night by Vincent van Gogh</p>
+                </div>
+                <div class="art-panel">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa">
+                    <p>Mona Lisa by Leonardo da Vinci</p>
+                </div>
+                <div class="art-panel">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/The_Persistence_of_Memory.jpg" alt="The Persistence of Memory">
+                    <p>The Persistence of Memory by Salvador Dalí</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
