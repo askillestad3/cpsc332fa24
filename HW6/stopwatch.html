@@ -1,0 +1,156 @@
+<!-- 
+    HW6 Starter code
+    Modified from: https://codepen.io/cathydutton/pen/GBcvo
+-->
+<!--
+    Name: Abby Skillestad
+    Class: CPSC 332 Web Development
+    Assignment: Homework 6 - JQuery
+    Date: 10/23/24
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW6 - JQuery Stopwatch - Fall Theme</title>
+
+    <!-- Include jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // jQuery variables
+            var $seconds = $("#seconds");
+            var $tens = $("#tens");
+            var $buttonStart = $('#button-start');
+            var $buttonStop = $('#button-stop');
+            var $buttonReset = $('#button-reset');
+            var interval;
+            var seconds = 0;
+            var tens = 0;
+
+            // apply class to timer
+            $("#timer").addClass("timer-background");
+
+            // button click events in jQuery
+            $buttonStart.on('click', function () {
+                clearInterval(interval);
+                interval = setInterval(startTimer, 10);
+                // set green when running
+                $("#timer").css("background-color", "rgb(51, 165, 50)")
+            });
+
+            $buttonStop.on('click', function () {
+                clearInterval(interval);
+                if (seconds > 0 || tens > 0) {
+                    // set red when stopped
+                    $("#timer").css("background-color", "rgb(251, 18, 47)")
+                }
+            });
+
+            $buttonReset.on('click', function () {
+                clearInterval(interval);
+                tens = 0;
+                seconds = 0;
+                $tens.html("00");
+                $seconds.html("00");
+                // set brown when reset
+                $("#timer").css("background-color", "#A0522D")
+            });
+
+            // timer functionality in jQuery
+            function startTimer() {
+                tens++;
+
+                if (tens < 9) {
+                    $tens.html("0" + tens);
+                } else {
+                    $tens.html(tens);
+                }
+
+                if (tens > 99) {
+                    seconds++;
+                    $seconds.html(seconds < 10 ? "0" + seconds : seconds);
+                    tens = 0;
+                    $tens.html("00");
+                }
+            }
+
+            var buttonStyles = {
+                "padding": "10px 20px",
+                "margin": "5px",
+                "border-radius": "5px",
+                "background-color": "#D2691E",
+                "border": "1px solid #8B4513",
+                "color": "#FFF8DC",
+                "cursor": "pointer"
+            };
+            $buttonStart.css(buttonStyles);
+            $buttonStop.css(buttonStyles);
+            $buttonReset.css(buttonStyles);
+
+            // animation for timer background
+            function animateBackground() {
+                $("#timer").animate({ opacity: 0.8 }, 500).animate({ opacity: 1.0 }, 500, animateBackground);
+            }
+            animateBackground();
+
+            // reset opacity when stopped
+            $buttonStop.on('click', function() {
+                $("#timer").stop(true).css("opacity", "1.0");
+            });
+
+            // reset opacity when reset
+            $buttonReset.on('click', function() {
+                $("#timer").stop(true).css("opacity", "1.0");
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #FFFAF0;
+            text-align: center;
+            color: #8B4513;
+        }
+
+        .wrapper {
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px solid #8B4513;
+            background-color: #F5DEB3;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* timer class styling */
+        .timer-background {
+            font-size: 2.5rem;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-color: #8B4513;
+            color: #FFF8DC;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            background-color: #CD853F;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Fall-Themed Stopwatch</h1>
+        <h2>JQuery Stopwatch</h2>
+        <!-- add id to timer -->
+        <p id="timer"><span id="seconds">00</span>:<span id="tens">00</span></p>
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-reset">Reset</button>
+    </div>
+</body>
+
+</html>
