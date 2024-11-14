@@ -1,0 +1,21 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#weather-display {
+    margin-top: 20px;
+}
+
+body.clear {
+    background-color: #87ceeb;
+}
+
+body.clouds {
+    background-color: #d3d3d3;
+}
+
+body.rain {
+    background-color: #a0a0a0;
+}
